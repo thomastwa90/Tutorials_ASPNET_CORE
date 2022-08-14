@@ -1,0 +1,25 @@
+@page
+@model OTF.Pages.Restaurants.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editinng @Model.restaurant.Name</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="restaurant.Id" />
+    <div class="form-group">
+        <label asp-for="restaurant.Name"></label>
+        <input asp-for="restaurant.Name" class = "form-control"/>
+        <span class="text-danger" asp-validation-for="restaurant.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="restaurant.cusine"></label>
+        <select class="form-control" asp-for="restaurant.cusine"
+        asp-items="Model.Cuisines"
+        >    
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+

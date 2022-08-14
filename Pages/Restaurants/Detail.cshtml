@@ -1,0 +1,29 @@
+@page
+@model OTF.Pages.Restaurants.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Restaurant.Name</h2>
+
+
+
+<div>
+    Location: @Model.Restaurant.Id
+</div>
+
+<div>
+    Cusine: @Model.Restaurant.cusine
+</div>
+
+<div>
+    Name: @Model.Restaurant.Name
+</div>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<a asp-page="./List" class ="btn btn-default">All Restaurant</a>
+
